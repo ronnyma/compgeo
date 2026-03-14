@@ -15,7 +15,7 @@ def main(): Unit = {
     override def compare(x: XOrderGivenSweep, y: XOrderGivenSweep): Int = x.xIntercept.compareTo(y.xIntercept)
 
   extension (segmentOrder: XOrderGivenSweep)
-    def pretty: String = "x: " + segmentOrder.xIntercept + ", (" + segmentOrder.segment.p1 + "," + segmentOrder.segment.p2 + ")"
+    def pretty: String = segmentOrder.segment.name + ": x = " + segmentOrder.xIntercept + ", Coord = (" + segmentOrder.segment.p1 + "," + segmentOrder.segment.p2 + ")"
 
   val q = mutable.PriorityQueue[XOrderGivenSweep]()
   segments.map(s => XOrderGivenSweep(s, ys)).foreach(q.enqueue(_))

@@ -1,8 +1,8 @@
 package ai.transfinite
 package planesweep.model
 
-case class Segment(p1: Point, p2: Point) {
-  override def toString: String = s"$p1 --> $p2"
+case class Segment(name: String, p1: Point, p2: Point) {
+  override def toString: String = s"$name: $p1 --> $p2"
 
   def intersectsSweepLine(ys: Double): Boolean =
     isParameterInRange(parameterAt(ys))
