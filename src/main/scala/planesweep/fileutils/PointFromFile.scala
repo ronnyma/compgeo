@@ -1,7 +1,7 @@
 package ai.transfinite
 package planesweep.fileutils
 
-import planesweep.model.{Counter, Point, Segment}
+import planesweep.model.{SegmentNameGenerator, Point, Segment}
 
 import scala.io.Source
 
@@ -12,7 +12,7 @@ object PointFromFile {
     try
       source.getLines().map { line =>
         val Array(x1, y1, x2, y2) = line.trim.split("\\s+").map(_.toDouble)
-        Segment(Counter(),Point(x1, y1), Point(x2, y2))
+        Segment(SegmentNameGenerator(),Point(x1, y1), Point(x2, y2))
       }.toList
     finally
       source.close()
